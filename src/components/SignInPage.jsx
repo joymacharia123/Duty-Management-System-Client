@@ -9,7 +9,7 @@ const SignInPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://duty-management-system-client.vercel.app/api/login/", {
+    const response = await fetch("https://duty-management-system-server.onrender.com/api/login/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

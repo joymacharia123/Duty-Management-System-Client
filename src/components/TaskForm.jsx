@@ -18,7 +18,7 @@ const TaskForm = ({ addTask }) => {
       is_complete: isComplete,
     };
 
-    fetch('https://duty-management-system-client.vercel.app/api/tasks/', {
+    fetch('https://duty-management-system-server.onrender.com/api/tasks/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const TaskForm = ({ addTask }) => {
   };
 
   const fetchUsers = async ()=>{
-    const response = await fetch("https://duty-management-system-client.vercel.app/api/users/")
+    const response = await fetch("https://duty-management-system-server.onrender.com/api/users/")
     const data = await response.json()
     if (response.ok){
       console.log(data)
