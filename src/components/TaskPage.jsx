@@ -9,7 +9,7 @@ const TaskPage = () => {
   const [ users, setUsers ] = useState([])
 
   const fetchUsers = async ()=>{
-    const response = await fetch("http://127.0.0.1:8000/api/users/")
+    const response = await fetch("https://duty-management-system-client.vercel.app/api/users/")
     const data = await response.json()
     if (response.ok){
       console.log(data)
@@ -22,7 +22,7 @@ const TaskPage = () => {
 
   useEffect(() => {
     // Fetch tasks from API
-    fetch('http://127.0.0.1:8000/api/tasks/')
+    fetch('https://duty-management-system-client.vercel.app/api/tasks/')
       .then(response => response.json())
       .then(data => setTasks(data));
 
@@ -38,7 +38,7 @@ const TaskPage = () => {
   };
 
   const deleteTask = (taskId) => {
-    fetch(`http://127.0.0.1:8000/api/tasks/${taskId}/`, {
+    fetch(`https://duty-management-system-client.vercel.app/api/tasks/${taskId}/`, {
       method: 'DELETE',
     }).then(() => {
       setTasks(tasks.filter(task => task.id !== taskId));
@@ -46,7 +46,7 @@ const TaskPage = () => {
   };
 
   const completeTask = (taskId, isComplete) => {
-    fetch(`http://127.0.0.1:8000/api/tasks/${taskId}/update_status/`, {
+    fetch(`https://duty-management-system-client.vercel.app/api/tasks/${taskId}/update_status/`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

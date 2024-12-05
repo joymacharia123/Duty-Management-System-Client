@@ -28,7 +28,7 @@ const EditTaskForm = ({ task, onUpdate, onCancel }) => {
       is_complete: isComplete,
     };
 
-    fetch(`http://127.0.0.1:8000/api/tasks/${task.id}/`, {
+    fetch(`https://duty-management-system-client.vercel.app/api/tasks/${task.id}/`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const EditTaskForm = ({ task, onUpdate, onCancel }) => {
   };
 
   const fetchUsers = async () => {
-    const response = await fetch("http://127.0.0.1:8000/api/users/");
+    const response = await fetch("https://duty-management-system-client.vercel.app/api/users/");
     const data = await response.json();
     if (response.ok) {
       console.log(data);
